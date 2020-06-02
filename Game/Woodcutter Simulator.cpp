@@ -22,22 +22,22 @@ int main()
     int firewood_variant;
 
 start:
-    cout << "У вас имеется " << wood << " древесины." << endl << endl;;
+    cout << "You have " << wood << " wood." << endl << endl;;
 
-    cout << "Что делаем?" << endl
-        << "1 = Рубить дрова(" << wood_in_second << " в секунду)." << endl
-        << "2 = Заработать дрова решением заданий" << endl;
+    cout << "What to do?" << endl
+         << "1 = Chopping wood(" << wood_in_second << " per second)." << endl;
+//        << "2 = Earn firewood by solving tasks" << endl;
     cin >> firewood_variant;
     cout << endl;
 
     if (firewood_variant == 1)
     {
-        cout << "Сколько рубить дрова?" << endl
-            << "0 = 1 секунду." << endl
-            << "1 = 10 секунд." << endl
-            << "2 = Минуту." << endl
-            << "3 = Час." << endl
-            << "4 = День." << endl;
+        cout << "How long does it take to chop wood?" << endl
+            << "0 = 1 Second." << endl
+            << "1 = 10 Seconds." << endl
+            << "2 = 1 Minute." << endl
+            << "3 = Hour." << endl
+            << "4 = Day." << endl;
         cin >> time_variant;
         cout << endl;
 
@@ -64,7 +64,7 @@ start:
         {
             Sleep(ms);
             wood += wood_in_second;
-            cout << "Вы срубили " << wood_in_second << " дерево(а)" << endl;
+            cout << "You cut down " << wood_in_second << " tree(s)." << endl;
         }
         cout << endl;
 
