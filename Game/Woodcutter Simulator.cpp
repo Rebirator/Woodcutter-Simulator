@@ -21,6 +21,7 @@ int main()
 
     int firewood_variant;
 
+// START
 start:
     cout << "You have " << wood << " wood." << endl << endl;;
 
