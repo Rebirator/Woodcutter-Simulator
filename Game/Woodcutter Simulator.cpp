@@ -58,6 +58,10 @@ start:
         case 4:
             time = day / 24 / 3;
             break;
+        default:
+            cout << "You entered the wrong option, return to the beginning.\n\n" << endl;
+//          YES, I WILL USE IT!
+            goto start;
         }
 
         for (size_t i = 0; i < time; i++)
@@ -68,6 +72,7 @@ start:
         }
         cout << endl;
 
+//      YES, I WILL USE IT!
         goto start;
     }
 }
