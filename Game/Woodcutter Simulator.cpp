@@ -20,13 +20,13 @@ void clear() {
         screen.dwSize.X * screen.dwSize.Y, topLeft, &written
     );
     SetConsoleCursorPosition(console, topLeft);
-    
+
     Sleep(100);
 }
 
 int main()
 {
-//    setlocale(LC_ALL, "RU");
+    //    setlocale(LC_ALL, "RU");
     srand(time(NULL));
     cout << fixed << setprecision(2);
 
@@ -47,28 +47,29 @@ int main()
 
     int variant;
 
-//  START
-    start:
+    //  START
+start:
 
     cout << "You have " << wood << " wood." << endl;
     cout << "You have " << stone << " stone." << endl;
     cout << "You have " << iron << " iron." << endl << endl;
 
     cout << "What to do?" << endl
-         << "1 = Get resources." << endl
-         << "2 = Go to the store." << endl;
+        << "1 = Get resources." << endl
+        << "2 = Go to the store." << endl;
     cin >> variant;
     cout << endl;
 
+    // RESOURCES
     if (variant == 1)
     {
         clear();
         int resource;
 
         cout << "What resource to mine?" << endl
-             << "1 = Woods." << endl
-             << "2 = Stone." << endl
-             << "3 = Iron." << endl;
+            << "1 = Woods." << endl
+            << "2 = Stone." << endl
+            << "3 = Iron." << endl;
         cin >> resource;
         cout << endl;
 
@@ -83,6 +84,7 @@ int main()
             cin >> firewood_variant;
             cout << endl;
 
+            // FIREWOOD
             if (firewood_variant == 1)
             {
                 clear();
@@ -153,6 +155,7 @@ int main()
                 goto start;
             }
         }
+        // STONE
         else if (resource == 2)
         {
             clear();
@@ -234,6 +237,7 @@ int main()
                 goto start;
             }
         }
+        // IRON
         else if (resource == 3)
         {
             clear();
@@ -316,13 +320,14 @@ int main()
             }
         }
     }
+    // STORE
     else if (variant == 2)
     {
         clear();
         int section;
 
         cout << "Select a store section:" << endl
-             << "1 = Axes." << endl;
+            << "1 = Axes." << endl;
         cin >> section;
         cout << endl;
 
@@ -332,11 +337,11 @@ int main()
             int axe;
 
             cout << "Select an ax to purchase:" << endl
-                 << "1 = Wooden ax | Costs 50.00 firewood." << endl
-                 << "2 = Wood-stone ax | Costs 35.00 firewood and 15.00 stones." << endl
-                 << "3 = Stone ax | Costs 50.00 stone." << endl
-                 << "4 = Stone-iron ax | Costs 35.00 stone and 15.00 iron." << endl
-                 << "5 = Iron ax | Costs 50.00 iron" << endl;
+                << "1 = Wooden ax | Costs 50.00 firewood." << endl
+                << "2 = Wood-stone ax | Costs 35.00 firewood and 15.00 stones." << endl
+                << "3 = Stone ax | Costs 50.00 stone." << endl
+                << "4 = Stone-iron ax | Costs 35.00 stone and 15.00 iron." << endl
+                << "5 = Iron ax | Costs 50.00 iron" << endl;
             cout << endl;
             cin >> axe;
 
