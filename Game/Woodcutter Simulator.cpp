@@ -4,6 +4,25 @@
 
 using namespace std;
 
+void clear() {
+    COORD topLeft = { 0, 0 };
+    HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_SCREEN_BUFFER_INFO screen;
+    DWORD written;
+
+    GetConsoleScreenBufferInfo(console, &screen);
+    FillConsoleOutputCharacterA(
+        console, ' ', screen.dwSize.X * screen.dwSize.Y, topLeft, &written
+    );
+    FillConsoleOutputAttribute(
+        console, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE,
+        screen.dwSize.X * screen.dwSize.Y, topLeft, &written
+    );
+    SetConsoleCursorPosition(console, topLeft);
+    
+    Sleep(100);
+}
+
 int main()
 {
 //    setlocale(LC_ALL, "RU");
@@ -35,6 +54,8 @@ int main()
 
     if (variant == 1)
     {
+        clear();
+
         cout << "Choose a way to get firewood" << endl
              << "1 = Chopping wood(" << wood_in_second << " per second)." << endl
              << "2 = Earn firewood by solving tasks." << endl;
@@ -43,9 +64,12 @@ int main()
 
         if (firewood_variant == 1)
         {
+            clear();
+
             cout << "How long does it take to chop wood?(in seconds):" << endl;
             cin >> time;
             cout << endl;
+            clear();
 
             for (size_t i = 0; i < time; i++)
             {
@@ -55,6 +79,7 @@ int main()
             }
             cout << endl;
 
+            clear();
             goto start;
         }
         else if (firewood_variant == 2)
@@ -90,7 +115,22 @@ int main()
                     cout << endl;
                 }
             }
+            clear();
             goto start;
         }
+        else
+        {
+            cout << "You entered the wrong option!" << endl << endl;
+            cout << endl;
+            clear();
+            goto start;
+        }
+    }
+    else
+    {
+        cout << "You entered the wrong option!" << endl << endl;
+        cout << endl;
+        clear();
+        goto start;
     }
 }
