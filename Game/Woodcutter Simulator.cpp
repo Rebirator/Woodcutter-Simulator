@@ -44,15 +44,16 @@ int main()
     double iron_in_second = 0.01;
 
     int variant;
-    int firewood_variant;
 
 //  START
     start:
 
-    cout << "You have " << wood << " wood." << endl << endl;;
+    cout << "You have " << wood << " wood." << endl;
+    cout << "You have " << stone << " stone." << endl;
+    cout << "You have " << iron << " iron." << endl << endl;
 
     cout << "What to do?" << endl
-         << "1 = Get wood." << endl
+         << "1 = Get resources." << endl
          << "2 = Go to the store." << endl;
     cin >> variant;
     cout << endl;
@@ -60,81 +61,257 @@ int main()
     if (variant == 1)
     {
         clear();
+        int resource;
 
-        cout << "Choose a way to get firewood" << endl
-             << "1 = Chopping wood(" << wood_in_second << " per second)." << endl
-             << "2 = Earn firewood by solving tasks." << endl;
-        cin >> firewood_variant;
+        cout << "What resource to mine?" << endl
+             << "1 = Woods." << endl
+             << "2 = Stone." << endl
+             << "3 = Iron." << endl;
+        cin >> resource;
         cout << endl;
 
-        if (firewood_variant == 1)
+        if (resource == 1)
         {
             clear();
+            int firewood_variant;
 
-            cout << "How long does it take to chop wood?(in seconds):" << endl;
-            cin >> time;
+            cout << "Choose a way to get firewood" << endl
+                << "1 = Chopping wood(" << wood_in_second << " per second)." << endl
+                << "2 = Earn firewood by solving tasks." << endl;
+            cin >> firewood_variant;
             cout << endl;
-            clear();
 
-            for (size_t i = 0; i < time; i++)
+            if (firewood_variant == 1)
             {
-                Sleep(ms);
-                wood += wood_in_second;
-                cout << "You cut down " << wood_in_second << " tree(s)." << endl;
-            }
-            cout << endl;
+                clear();
 
-            clear();
-            goto start;
-        }
-        else if (firewood_variant == 2)
-        {
-            int tasks;
-            int random_value_1;
-            int random_value_2;
-            int value;
-            int wood_value = 5;
+                cout << "How long does it take to chop wood?(in seconds):" << endl;
+                cin >> time;
+                cout << endl;
+                clear();
 
-            cout << "How many tasks do you want to complete?:" << endl;
-            cin >> tasks;
-            cout << endl;
-
-            for (size_t i = 0; i < tasks; i++)
-            {
-                random_value_1 = rand() % 100;
-                random_value_2 = rand() % 100;
-
-                cout << "How much is " << random_value_1 << " + " << random_value_2 << "?" << endl;
-                cin >> value;
+                for (size_t i = 0; i < time; i++)
+                {
+                    Sleep(ms);
+                    wood += wood_in_second;
+                    cout << "You cut down " << wood_in_second << " tree(s)." << endl;
+                }
                 cout << endl;
 
-                if (random_value_1 + random_value_2 == value)
-                {
-                    clear(); 
-                    cout << "You answered correctly, and received " << wood_value << " wood!" << endl << endl;
-                    wood += 5;
-                    cout << endl;
-                    system("pause");
-                }
-                else
-                {
-                    clear();
-                    cout << "Sorry, you answered incorrectly." << endl << endl;
-                    cout << endl;
-                    system("pause");
-                }
+                clear();
+                goto start;
             }
-            clear();
-            goto start;
+            else if (firewood_variant == 2)
+            {
+                int tasks;
+                int random_value_1;
+                int random_value_2;
+                int value;
+                int wood_value = 5;
+
+                cout << "How many tasks do you want to complete?:" << endl;
+                cin >> tasks;
+                cout << endl;
+
+                for (size_t i = 0; i < tasks; i++)
+                {
+                    random_value_1 = rand() % 100;
+                    random_value_2 = rand() % 100;
+
+                    cout << "How much is " << random_value_1 << " + " << random_value_2 << "?" << endl;
+                    cin >> value;
+                    cout << endl;
+
+                    if (random_value_1 + random_value_2 == value)
+                    {
+                        clear();
+                        cout << "You answered correctly, and received " << wood_value << " wood!" << endl << endl;
+                        wood += 5;
+                        cout << endl;
+                        system("pause");
+                    }
+                    else
+                    {
+                        clear();
+                        cout << "Sorry, you answered incorrectly." << endl << endl;
+                        cout << endl;
+                        system("pause");
+                    }
+                }
+                clear();
+                goto start;
+            }
+            else
+            {
+                cout << "You entered the wrong option!" << endl << endl;
+                cout << endl;
+
+                system("pause");
+                clear();
+                goto start;
+            }
         }
-        else
+        else if (resource == 2)
         {
-            cout << "You entered the wrong option!" << endl << endl;
+            clear();
+            int stone_variant;
+
+            cout << "Choose a way to get stone" << endl
+                << "1 = Chopping stone(" << stone_in_second << " per second)." << endl
+                << "2 = Earn stone by solving tasks." << endl;
+            cin >> stone_variant;
             cout << endl;
 
-            system("pause");
+            if (stone_variant == 1)
+            {
+                clear();
+
+                cout << "How long does it take to chop stone?(in seconds):" << endl;
+                cin >> time;
+                cout << endl;
+                clear();
+
+                for (size_t i = 0; i < time; i++)
+                {
+                    Sleep(ms);
+                    wood += wood_in_second;
+                    cout << "You cut down " << wood_in_second << " stone(s)." << endl;
+                }
+                cout << endl;
+
+                clear();
+                goto start;
+            }
+            else if (stone_variant == 2)
+            {
+                int tasks;
+                int random_value_1;
+                int random_value_2;
+                int value;
+                int stone_value = 0.5;
+
+                cout << "How many tasks do you want to complete?:" << endl;
+                cin >> tasks;
+                cout << endl;
+
+                for (size_t i = 0; i < tasks; i++)
+                {
+                    random_value_1 = rand() % 100;
+                    random_value_2 = rand() % 100;
+
+                    cout << "How much is " << random_value_1 << " + " << random_value_2 << "?" << endl;
+                    cin >> value;
+                    cout << endl;
+
+                    if (random_value_1 + random_value_2 == value)
+                    {
+                        clear();
+                        cout << "You answered correctly, and received " << stone_value << " stone!" << endl << endl;
+                        wood += 5;
+                        cout << endl;
+                        system("pause");
+                    }
+                    else
+                    {
+                        clear();
+                        cout << "Sorry, you answered incorrectly." << endl << endl;
+                        cout << endl;
+                        system("pause");
+                    }
+                }
+                clear();
+                goto start;
+            }
+            else
+            {
+                cout << "You entered the wrong option!" << endl << endl;
+                cout << endl;
+
+                system("pause");
+                clear();
+                goto start;
+            }
+        }
+        else if (resource == 3)
+        {
             clear();
-            goto start;
+            int iron_variant;
+
+            cout << "Choose a way to get iron" << endl
+                << "1 = Chopping iron(" << iron_in_second << " per second)." << endl
+                << "2 = Earn iron by solving tasks." << endl;
+            cin >> iron_variant;
+            cout << endl;
+
+            if (iron_variant == 3)
+            {
+                clear();
+
+                cout << "How long does it take to chop iron?(in seconds):" << endl;
+                cin >> time;
+                cout << endl;
+                clear();
+
+                for (size_t i = 0; i < time; i++)
+                {
+                    Sleep(ms);
+                    wood += wood_in_second;
+                    cout << "You cut down " << wood_in_second << " iron(s)." << endl;
+                }
+                cout << endl;
+
+                clear();
+                goto start;
+            }
+            else if (iron_variant == 2)
+            {
+                int tasks;
+                int random_value_1;
+                int random_value_2;
+                int value;
+                int stone_value = 0.5;
+
+                cout << "How many tasks do you want to complete?:" << endl;
+                cin >> tasks;
+                cout << endl;
+
+                for (size_t i = 0; i < tasks; i++)
+                {
+                    random_value_1 = rand() % 100;
+                    random_value_2 = rand() % 100;
+
+                    cout << "How much is " << random_value_1 << " + " << random_value_2 << "?" << endl;
+                    cin >> value;
+                    cout << endl;
+
+                    if (random_value_1 + random_value_2 == value)
+                    {
+                        clear();
+                        cout << "You answered correctly, and received " << stone_value << " iron!" << endl << endl;
+                        wood += 5;
+                        cout << endl;
+                        system("pause");
+                    }
+                    else
+                    {
+                        clear();
+                        cout << "Sorry, you answered incorrectly." << endl << endl;
+                        cout << endl;
+                        system("pause");
+                    }
+                }
+                clear();
+                goto start;
+            }
+            else
+            {
+                cout << "You entered the wrong option!" << endl << endl;
+                cout << endl;
+
+                system("pause");
+                clear();
+                goto start;
+            }
         }
     }
     else if (variant == 2)
