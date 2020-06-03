@@ -24,6 +24,12 @@ void clear() {
     Sleep(100);
 }
 
+void pause()
+{
+    system("pause");
+    clear();
+}
+
 int main()
 {
 //    setlocale(LC_ALL, "RU");
@@ -150,8 +156,7 @@ int main()
                 cout << "You entered the wrong option!" << endl << endl;
                 cout << endl;
 
-                system("pause");
-                clear();
+                pause();
                 goto start;
             }
         }
@@ -232,8 +237,7 @@ int main()
                 cout << "You entered the wrong option!" << endl << endl;
                 cout << endl;
 
-                system("pause");
-                clear();
+                pause();
                 goto start;
             }
         }
@@ -296,14 +300,14 @@ int main()
                         cout << "You answered correctly, and received " << iron_value << " iron!" << endl << endl;
                         wood += 5;
                         cout << endl;
-                        system("pause");
+                        pause();
                     }
                     else
                     {
                         clear();
                         cout << "Sorry, you answered incorrectly." << endl << endl;
                         cout << endl;
-                        system("pause");
+                        pause();
                     }
                 }
                 clear();
@@ -314,8 +318,7 @@ int main()
                 cout << "You entered the wrong option!" << endl << endl;
                 cout << endl;
 
-                system("pause");
-                clear();
+                pause();
                 goto start;
             }
         }
@@ -357,8 +360,7 @@ int main()
 
                     cout << "You have purchased a wooden ax!" << endl;
 
-                    system("pause");
-                    clear();
+                    pause();
                     goto start;
                 }
                 else
@@ -368,8 +370,7 @@ int main()
                     cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
                     cout << endl;
 
-                    system("pause");
-                    clear();
+                    pause();
                     goto start;
                 }
                 break;
@@ -384,8 +385,7 @@ int main()
 
                     cout << "You have purchased a wood-stone ax!" << endl;
 
-                    system("pause");
-                    clear();
+                    pause();
                     goto start;
                 }
                 else
@@ -395,8 +395,7 @@ int main()
                     cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
                     cout << endl;
 
-                    system("pause");
-                    clear();
+                    pause();
                     goto start;
                 }
                 break;
@@ -410,8 +409,7 @@ int main()
 
                     cout << "You have purchased a stone ax!" << endl;
 
-                    system("pause");
-                    clear();
+                    pause();
                     goto start;
                 }
                 else
@@ -421,8 +419,7 @@ int main()
                     cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
                     cout << endl;
 
-                    system("pause");
-                    clear();
+                    pause();
                     goto start;
                 }
                 break;
@@ -437,8 +434,7 @@ int main()
 
                     cout << "You have purchased a stone-iron ax!" << endl;
 
-                    system("pause");
-                    clear();
+                    pause();
                     goto start;
                 }
                 else
@@ -448,8 +444,7 @@ int main()
                     cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
                     cout << endl;
 
-                    system("pause");
-                    clear();
+                    pause();
                     goto start;
                 }
                 break;
@@ -463,8 +458,7 @@ int main()
 
                     cout << "You have purchased an iron ax!" << endl;
 
-                    system("pause");
-                    clear();
+                    pause();
                     goto start;
                 }
                 else
@@ -474,8 +468,7 @@ int main()
                     cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
                     cout << endl;
 
-                    system("pause");
-                    clear();
+                    pause();
                     goto start;
                 }
                 break;
@@ -485,8 +478,7 @@ int main()
                 cout << "You entered the wrong option!" << endl << endl;
                 cout << endl;
 
-                system("pause");
-                clear();
+                pause();
                 goto start;
                 break;
             }
@@ -498,8 +490,7 @@ int main()
             cout << "You entered the wrong option!" << endl << endl;
             cout << endl;
 
-            system("pause");
-            clear();
+            pause();
             goto start;
         }
     }
@@ -512,5 +503,5 @@ int main()
     }
 
     cout << endl;
-    system("pause");
+    pause();
 }
