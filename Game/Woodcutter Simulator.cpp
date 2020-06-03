@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <ctime>
 #include <Windows.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -27,6 +28,7 @@ int main()
 {
 //    setlocale(LC_ALL, "RU");
     srand(time(NULL));
+    cout << fixed << setprecision(2);
 
     int time;
     int ms = 1000;
@@ -35,11 +37,11 @@ int main()
     int hour = minute * minute;
     int day = hour * 24;
 
-    int wood = 0;
+    double wood = 0;
     double stone = 0;
     double iron = 0;
 
-    int wood_in_second = 1;
+    double wood_in_second = 1;
     double stone_in_second = 0.1;
     double iron_in_second = 0.01;
 
@@ -107,7 +109,7 @@ int main()
                 int random_value_1;
                 int random_value_2;
                 int value;
-                int wood_value = 5;
+                double wood_value = 5;
 
                 cout << "How many tasks do you want to complete?:" << endl;
                 cin >> tasks;
@@ -330,11 +332,11 @@ int main()
             int axe;
 
             cout << "Select an ax to purchase:" << endl
-                 << "1 = Wooden ax | Costs 50 firewood." << endl
-                 << "2 = Wood-stone ax | Costs 35 firewood and 15 stones." << endl
-                 << "3 = Stone ax | Costs 50 stone." << endl
-                 << "4 = Stone-iron ax | Costs 35 stone and 15 iron." << endl
-                 << "5 = Iron ax | Costs 50 iron" << endl;
+                 << "1 = Wooden ax | Costs 50.00 firewood." << endl
+                 << "2 = Wood-stone ax | Costs 35.00 firewood and 15.00 stones." << endl
+                 << "3 = Stone ax | Costs 50.00 stone." << endl
+                 << "4 = Stone-iron ax | Costs 35.00 stone and 15.00 iron." << endl
+                 << "5 = Iron ax | Costs 50.00 iron" << endl;
             cout << endl;
             cin >> axe;
 
