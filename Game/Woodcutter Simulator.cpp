@@ -36,7 +36,12 @@ int main()
     int day = hour * 24;
 
     int wood = 0;
+    int stone = 0;
+    int iron = 0;
+
     int wood_in_second = 1;
+    int stone_in_second = 0.1;
+    int iron_in_second = 0.01;
 
     int variant;
     int firewood_variant;
@@ -126,8 +131,181 @@ int main()
         {
             cout << "You entered the wrong option!" << endl << endl;
             cout << endl;
+
+            system("pause");
             clear();
             goto start;
+        }
+    }
+    else if (variant == 2)
+    {
+        clear();
+        int section;
+
+        cout << "Select a store section:" << endl
+             << "1 = Axes." << endl;
+        cin >> section;
+        cout << endl;
+
+        if (section == 1)
+        {
+            clear();
+            int axe;
+
+            cout << "Select an ax to purchase:" << endl
+                 << "1 = Wooden ax | Costs 50 firewood." << endl
+                 << "2 = Wood-stone ax | Costs 35 firewood and 15 stones." << endl
+                 << "3 = Stone ax | Costs 50 stone." << endl
+                 << "4 = Stone-iron ax | Costs 35 stone and 15 iron." << endl
+                 << "5 = Iron ax | Costs 50 iron" << endl;
+            cout << endl;
+            cin >> axe;
+
+            switch (axe)
+            {
+            case 1:
+                if (wood >= 50)
+                {
+                    wood -= 50;
+                    wood_in_second += 2;
+                    stone_in_second += 0.3;
+                    iron_in_second += 0.05;
+
+                    cout << "You have purchased a wooden ax!" << endl;
+
+                    system("pause");
+                    clear();
+                    goto start;
+                }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                    cout << endl;
+
+                    system("pause");
+                    clear();
+                    goto start;
+                }
+                break;
+            case 2:
+                if (wood >= 35 && stone >= 15)
+                {
+                    wood -= 35;
+                    stone -= 15;
+                    wood_in_second += 5;
+                    stone_in_second += 1;
+                    iron_in_second += 0.1;
+
+                    cout << "You have purchased a wood-stone ax!" << endl;
+
+                    system("pause");
+                    clear();
+                    goto start;
+                }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                    cout << endl;
+
+                    system("pause");
+                    clear();
+                    goto start;
+                }
+                break;
+            case 3:
+                if (stone >= 50)
+                {
+                    stone -= 50;
+                    wood_in_second += 10;
+                    stone_in_second += 2.5;
+                    iron_in_second += 0.4;
+
+                    cout << "You have purchased a stone ax!" << endl;
+
+                    system("pause");
+                    clear();
+                    goto start;
+                }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                    cout << endl;
+
+                    system("pause");
+                    clear();
+                    goto start;
+                }
+                break;
+            case 4:
+                if (stone >= 35 && iron >= 15)
+                {
+                    stone -= 35;
+                    iron -= 15;
+                    wood_in_second += 18;
+                    stone_in_second += 5;
+                    iron_in_second += 1;
+
+                    cout << "You have purchased a stone-iron ax!" << endl;
+
+                    system("pause");
+                    clear();
+                    goto start;
+                }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                    cout << endl;
+
+                    system("pause");
+                    clear();
+                    goto start;
+                }
+                break;
+            case 5:
+                if (iron >= 50)
+                {
+                    iron -= 50;
+                    wood_in_second += 30;
+                    stone_in_second += 10;
+                    iron_in_second += 3;
+
+                    cout << "You have purchased an iron ax!" << endl;
+
+                    system("pause");
+                    clear();
+                    goto start;
+                }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                    cout << endl;
+
+                    system("pause");
+                    clear();
+                    goto start;
+                }
+                break;
+            default:
+                clear();
+
+                cout << "You entered the wrong option!" << endl << endl;
+                cout << endl;
+
+                system("pause");
+                clear();
+                goto start;
+                break;
+            }
         }
     }
     else
