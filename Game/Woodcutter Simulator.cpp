@@ -36,8 +36,8 @@ int main()
     int day = hour * 24;
 
     int wood = 0;
-    int stone = 0;
-    int iron = 0;
+    double stone = 0;
+    double iron = 0;
 
     int wood_in_second = 1;
     double stone_in_second = 0.1;
@@ -174,8 +174,8 @@ int main()
                 for (size_t i = 0; i < time; i++)
                 {
                     Sleep(ms);
-                    wood += wood_in_second;
-                    cout << "You cut down " << wood_in_second << " stone(s)." << endl;
+                    stone += stone_in_second;
+                    cout << "You cut down " << stone_in_second << " stone(s)." << endl;
                 }
                 cout << endl;
 
@@ -255,8 +255,8 @@ int main()
                 for (size_t i = 0; i < time; i++)
                 {
                     Sleep(ms);
-                    wood += wood_in_second;
-                    cout << "You cut down " << wood_in_second << " iron(s)." << endl;
+                    iron += iron_in_second;
+                    cout << "You cut down " << iron_in_second << " iron(s)." << endl;
                 }
                 cout << endl;
 
