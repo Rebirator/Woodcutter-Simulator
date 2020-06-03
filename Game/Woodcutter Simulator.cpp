@@ -40,8 +40,8 @@ int main()
     int iron = 0;
 
     int wood_in_second = 1;
-    int stone_in_second = 0.1;
-    int iron_in_second = 0.01;
+    double stone_in_second = 0.1;
+    double iron_in_second = 0.01;
 
     int variant;
     int firewood_variant;
@@ -306,6 +306,17 @@ int main()
                 goto start;
                 break;
             }
+        }
+        else
+        {
+            clear();
+
+            cout << "You entered the wrong option!" << endl << endl;
+            cout << endl;
+
+            system("pause");
+            clear();
+            goto start;
         }
     }
     else
