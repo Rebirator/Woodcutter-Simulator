@@ -105,14 +105,18 @@ int main()
 
                 if (random_value_1 + random_value_2 == value)
                 {
+                    clear(); 
                     cout << "You answered correctly, and received " << wood_value << " wood!" << endl << endl;
                     wood += 5;
                     cout << endl;
+                    system("pause");
                 }
                 else
                 {
+                    clear();
                     cout << "Sorry, you answered incorrectly." << endl << endl;
                     cout << endl;
+                    system("pause");
                 }
             }
             clear();
