@@ -188,7 +188,7 @@ int main()
                 int random_value_1;
                 int random_value_2;
                 int value;
-                int stone_value = 0.5;
+                double stone_value = 0.5;
 
                 cout << "How many tasks do you want to complete?:" << endl;
                 cin >> tasks;
@@ -269,7 +269,7 @@ int main()
                 int random_value_1;
                 int random_value_2;
                 int value;
-                int stone_value = 0.5;
+                double iron_value = 0.5;
 
                 cout << "How many tasks do you want to complete?:" << endl;
                 cin >> tasks;
@@ -287,7 +287,7 @@ int main()
                     if (random_value_1 + random_value_2 == value)
                     {
                         clear();
-                        cout << "You answered correctly, and received " << stone_value << " iron!" << endl << endl;
+                        cout << "You answered correctly, and received " << iron_value << " iron!" << endl << endl;
                         wood += 5;
                         cout << endl;
                         system("pause");
