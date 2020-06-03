@@ -243,7 +243,7 @@ int main()
             cin >> iron_variant;
             cout << endl;
 
-            if (iron_variant == 3)
+            if (iron_variant == 1)
             {
                 clear();
 
