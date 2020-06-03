@@ -133,4 +133,7 @@ int main()
         clear();
         goto start;
     }
+
+    cout << endl;
+    system("pause");
 }
