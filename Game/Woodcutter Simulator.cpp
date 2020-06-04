@@ -463,6 +463,7 @@ int main()
 				pause();
 				goto start;
 				break;
+
             }
         }
      // PICKAXES
