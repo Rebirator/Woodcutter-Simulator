@@ -50,6 +50,10 @@ int main()
     double stone_in_second = 0.1;
     double iron_in_second = 0.01;
 
+    //profile variable
+    string axe[6]{ "Old wooden", "Wooden", "Wood-stone", "Stone", "Stone-iron", "Iron" };
+    string axs = axe[0];
+
     int variant;
 
 //  START
@@ -61,7 +65,8 @@ int main()
 
     cout << "What to do?" << endl
          << "1 = Get resources." << endl
-         << "2 = Go to the store." << endl;
+         << "2 = Go to the store.\n" << endl
+         << "0 = My profile." << endl;
     cin >> variant;
     cout << endl;
 
@@ -103,7 +108,7 @@ int main()
                 {
                     Sleep(ms);
                     wood += wood_in_second;
-                    cout << "You cut down " << wood_in_second << " tree(s)." << endl;
+                    cout << "You cut down " << wood_in_second << " wood(s)." << endl;
                 }
                 cout << endl;
 
@@ -336,7 +341,7 @@ int main()
         if (section == 1)
         {
             clear();
-            int axe;
+            int ax;
 
             cout << "Select an ax to purchase:" << endl << endl
                  << "1 = Wooden ax:" << endl
@@ -360,15 +365,16 @@ int main()
                  << "Gives +30 wood per second." << endl
                  << endl;
             cout << endl;
-            cin >> axe;
+            cin >> ax;
 
-            switch (axe)
+            switch (ax)
             {
             case 1:
                 if (wood >= 50)
                 {
                     wood -= 50;
                     wood_in_second += 2;
+                    axs = axe[1];
 
                     cout << "You have purchased a wooden ax!" << endl;
 
@@ -392,6 +398,7 @@ int main()
                     wood -= 35;
                     stone -= 15;
                     wood_in_second += 5;
+                    axs = axe[2];
 
                     cout << "You have purchased a wood-stone ax!" << endl;
 
@@ -414,6 +421,7 @@ int main()
                 {
                     stone -= 50;
                     wood_in_second += 10;
+                    axs = axe[3];
 
                     cout << "You have purchased a stone ax!" << endl;
 
@@ -437,6 +445,7 @@ int main()
                     stone -= 35;
                     iron -= 15;
                     wood_in_second += 18;
+                    axs = axe[4];
 
                     cout << "You have purchased a stone-iron ax!" << endl;
 
@@ -459,6 +468,7 @@ int main()
                 {
                     iron -= 50;
                     wood_in_second += 30;
+                    axs = axe[5];
 
                     cout << "You have purchased an iron ax!" << endl;
 
@@ -497,6 +507,18 @@ int main()
             pause();
             goto start;
         }
+    }
+    else if (variant == 0)
+    {
+        clear();
+        cout << "Woods: " << wood << endl;
+        cout << "Stones: " << stone << endl;
+        cout << "Irons: " << iron << endl;
+        cout << endl;
+        cout << "Ax: " << axs << endl;
+        cout << endl;
+        pause();
+        goto start;
     }
     else
     {
