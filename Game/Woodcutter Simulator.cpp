@@ -55,8 +55,8 @@ int main()
     string axe[6]{ "Old wooden", "Wooden", "Wood-stone", "Stone", "Stone-iron", "Iron" };
     string axs = axe[0];
     //pickaxes
-	string pickaxe[7]{ "None", "Old wooden", "Wooden", "Wood-stone", "Stone", "Stone-iron", "Iron" };
-	string pickaxs = pickaxe[0];
+    string pickaxe[7]{ "None", "Old wooden", "Wooden", "Wood-stone", "Stone", "Stone-iron", "Iron" };
+    string pickaxs = pickaxe[0];
 
 
     int variant;
@@ -444,149 +444,149 @@ int main()
                 }
                 break;
             default:
-				if (ax > 5 || ax < 0)
-				{
-					clear();
+                if (ax > 5 || ax < 0)
+                {
+                    clear();
 
-					cout << "You entered the wrong option!" << endl << endl;
-					cout << endl;
+                    cout << "You entered the wrong option!" << endl << endl;
+                    cout << endl;
 
-					pause();
-					goto start;
-					break;
-				}
-				clear();
+                    pause();
+                    goto start;
+                    break;
+                }
+                clear();
 
-				cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
-				cout << endl;
+                cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                cout << endl;
 
-				pause();
-				goto start;
-				break;
+                pause();
+                goto start;
+                break;
 
             }
         }
      // PICKAXES
-		if (section == 2)
-		{
-			clear();
-			int pickax;
+        if (section == 2)
+        {
+            clear();
+            int pickax;
 
-			cout << "Select an ax to purchase:" << endl << endl
-				<< "1 = Old wooden pickax:" << endl
-				<< "Price: 50.00 firewood." << endl
-				<< "Gives +0.10 stone per second." << endl << endl
+            cout << "Select an ax to purchase:" << endl << endl
+                << "1 = Old wooden pickax:" << endl
+                << "Price: 50.00 firewood." << endl
+                << "Gives +0.10 stone per second." << endl << endl
 
-				<< "2 = Wooden pickax:" << endl
-				<< "Price: 150 firewood." << endl
-				<< "Gives +0.50 stone per second." << endl << endl
+                << "2 = Wooden pickax:" << endl
+                << "Price: 150 firewood." << endl
+                << "Gives +0.50 stone per second." << endl << endl
 
-				<< "3 = Wood-stone pickax:" << endl
-				<< "Price: 125.00 firewood and 25.00 stones." << endl
-				<< "Gives +1.00 stone and +0.10 iron per second." << endl << endl
+                << "3 = Wood-stone pickax:" << endl
+                << "Price: 125.00 firewood and 25.00 stones." << endl
+                << "Gives +1.00 stone and +0.10 iron per second." << endl << endl
 
-				<< "4 = Stone pickax:" << endl
-				<< "Price: 150 stone." << endl
-				<< "Gives +3.00 stone and +0.70 iron per second." << endl << endl
+                << "4 = Stone pickax:" << endl
+                << "Price: 150 stone." << endl
+                << "Gives +3.00 stone and +0.70 iron per second." << endl << endl
 
-				<< "5 = Stone-iron pickax:" << endl
-				<< "Price: 100.00 stone and 50.00 iron." << endl
-				<< "Gives +5.00 stone and +1.25 iron per second." << endl << endl
+                << "5 = Stone-iron pickax:" << endl
+                << "Price: 100.00 stone and 50.00 iron." << endl
+                << "Gives +5.00 stone and +1.25 iron per second." << endl << endl
 
-				<< "6 = Iron pickax:" << endl
-				<< "Price: 150.00 iron." << endl
-				<< "Gives +10.00 stone and +3.00 iron per second." << endl
-				<< endl;
-			cout << endl;
-			cin >> pickax;
+                << "6 = Iron pickax:" << endl
+                << "Price: 150.00 iron." << endl
+                << "Gives +10.00 stone and +3.00 iron per second." << endl
+                << endl;
+            cout << endl;
+            cin >> pickax;
 
-			switch (pickax)
-			{
-			case 1:
-				if (wood >= 50.00)
-				{
-					wood -= 50.00;
+            switch (pickax)
+            {
+            case 1:
+                if (wood >= 50.00)
+                {
+                    wood -= 50.00;
                     stone_in_second = 0.10;
                     pickaxs = pickaxe[1];
 
-					cout << "You have purchased a old wooden pickax!" << endl;
+                    cout << "You have purchased a old wooden pickax!" << endl;
 
-					pause();
-					goto start;
-				}
-				break;
-			case 2:
-				if (wood >= 150)
-				{
-					wood -= 150;
+                    pause();
+                    goto start;
+                }
+                break;
+            case 2:
+                if (wood >= 150)
+                {
+                    wood -= 150;
                     stone_in_second = 0.50;
                     pickaxs = pickaxe[2];
 
-					cout << "You have purchased a wooden pickax!" << endl;
+                    cout << "You have purchased a wooden pickax!" << endl;
 
-					pause();
-					goto start;
-				}
-				break;
-			case 3:
-				if (wood >= 125.00 && stone >= 25.00)
-				{
-					wood -= 125.00;
+                    pause();
+                    goto start;
+                }
+                break;
+            case 3:
+                if (wood >= 125.00 && stone >= 25.00)
+                {
+                    wood -= 125.00;
                     stone -= 25.00;
-					stone_in_second = 1.00;
-					iron_in_second = 0.10;
-					pickaxs = pickaxe[3];
+                    stone_in_second = 1.00;
+                    iron_in_second = 0.10;
+                    pickaxs = pickaxe[3];
 
-					cout << "You have purchased a wood-stone pickax!" << endl;
+                    cout << "You have purchased a wood-stone pickax!" << endl;
 
-					pause();
-					goto start;
-				}
-				break;
-			case 4:
-				if (stone >= 150.00)
-				{
-					stone -= 150.00;
-					stone_in_second = 3.00;
-					iron_in_second = 0.70;
-					pickaxs = pickaxe[4];
+                    pause();
+                    goto start;
+                }
+                break;
+            case 4:
+                if (stone >= 150.00)
+                {
+                    stone -= 150.00;
+                    stone_in_second = 3.00;
+                    iron_in_second = 0.70;
+                    pickaxs = pickaxe[4];
 
-					cout << "You have purchased a stone pickax!" << endl;
+                    cout << "You have purchased a stone pickax!" << endl;
 
-					pause();
-					goto start;
-				}
-				break;
-			case 5:
-				if (stone >= 100.00 && iron > 50.00)
-				{
+                    pause();
+                    goto start;
+                }
+                break;
+            case 5:
+                if (stone >= 100.00 && iron > 50.00)
+                {
                     stone -= 100.00;
                     iron -= 50.00;
-					stone_in_second = 5.00;
-					iron_in_second = 1.25;
-					pickaxs = pickaxe[5];
+                    stone_in_second = 5.00;
+                    iron_in_second = 1.25;
+                    pickaxs = pickaxe[5];
 
-					cout << "You have purchased an stone-iron pickax!" << endl;
-
-					pause();
-					goto start;
-				}
-				break;
-			case 6:
-				if (iron >= 150.00)
-				{
-					iron -= 150.00;
+                    cout << "You have purchased an stone-iron pickax!" << endl;
+                    
+                    pause();
+                    goto start;
+                }
+                break;
+            case 6:
+                if (iron >= 150.00)
+                {
+                    iron -= 150.00;
                     stone_in_second = 10.00;
                     iron_in_second = 3.00;
-					pickaxs = pickaxe[6];
+                    pickaxs = pickaxe[6];
 
-					cout << "You have purchased an iron pickax!" << endl;
+                    cout << "You have purchased an iron pickax!" << endl;
 
-					pause();
-					goto start;
-				}
-				break;
-			default:
+                    pause();
+                    goto start;
+                }
+                break;
+            default:
                 if (pickax > 6 || pickax < 0)
                 {
                     clear();
@@ -598,16 +598,16 @@ int main()
                     goto start;
                     break;
                 }
-				clear();
+                clear();
 
-				cout << "Unfortunately, you do not have enough resources for this pickax!" << endl << endl;
-				cout << endl;
+                cout << "Unfortunately, you do not have enough resources for this pickax!" << endl << endl;
+                cout << endl;
 
-				pause();
-				goto start;
-				break;
-			}
-		}
+                pause();
+                goto start;
+                break;
+            }
+        }
         else
         {
             clear();
