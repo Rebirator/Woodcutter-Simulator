@@ -51,8 +51,13 @@ int main()
     double iron_in_second = 0.01;
 
     //profile variable
+    //axes
     string axe[6]{ "Old wooden", "Wooden", "Wood-stone", "Stone", "Stone-iron", "Iron" };
     string axs = axe[0];
+    //pickaxes
+	string pickaxe[7]{ "None", "Old wooden", "Wooden", "Wood-stone", "Stone", "Stone-iron", "Iron" };
+	string pickaxs = pickaxe[0];
+
 
     int variant;
 
@@ -334,10 +339,12 @@ int main()
         int section;
 
         cout << "Select a store section:" << endl
-             << "1 = Axes." << endl;
+             << "1 = Axes." << endl
+             << "2 = Pickaxes" << endl;
         cin >> section;
         cout << endl;
 
+     // AXES
         if (section == 1)
         {
             clear();
@@ -346,23 +353,23 @@ int main()
             cout << "Select an ax to purchase:" << endl << endl
                  << "1 = Wooden ax:" << endl
                  << "Price: 50.00 firewood." << endl
-                 << "Gives +2 wood per second." << endl << endl
+                 << "Gives +2.00 wood per second." << endl << endl
 
                  << "2 = Wood-stone ax:" << endl
                  << "Price: 35.00 firewood and 15.00 stones." << endl
-                 << "Gives +5 wood per second." << endl << endl
+                 << "Gives +5.00 wood per second." << endl << endl
 
                  << "3 = Stone ax:" << endl
                  << "Price: 50.00 stone." << endl
-                 << "Gives +10 wood per second." << endl << endl
+                 << "Gives +10.00 wood per second." << endl << endl
 
                  << "4 = Stone-iron ax:" << endl
                  << "Price: 35.00 stone and 15.00 iron." << endl
-                 << "Gives +18 wood per second." << endl << endl
+                 << "Gives +18.00 wood per second." << endl << endl
 
                  << "5 = Iron ax:" << endl
                  << "Price: 50.00 iron." << endl
-                 << "Gives +30 wood per second." << endl
+                 << "Gives +30.00 wood per second." << endl
                  << endl;
             cout << endl;
             cin >> ax;
@@ -370,9 +377,9 @@ int main()
             switch (ax)
             {
             case 1:
-                if (wood >= 50)
+                if (wood >= 50.00)
                 {
-                    wood -= 50;
+                    wood -= 50.00;
                     wood_in_second += 2;
                     axs = axe[1];
 
@@ -381,22 +388,12 @@ int main()
                     pause();
                     goto start;
                 }
-                else
-                {
-                    clear();
-
-                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
-                    cout << endl;
-
-                    pause();
-                    goto start;
-                }
                 break;
             case 2:
-                if (wood >= 35 && stone >= 15)
+                if (wood >= 35.00 && stone >= 15.00)
                 {
-                    wood -= 35;
-                    stone -= 15;
+                    wood -= 35.00;
+                    stone -= 15.00;
                     wood_in_second += 5;
                     axs = axe[2];
 
@@ -405,21 +402,11 @@ int main()
                     pause();
                     goto start;
                 }
-                else
-                {
-                    clear();
-
-                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
-                    cout << endl;
-
-                    pause();
-                    goto start;
-                }
                 break;
             case 3:
-                if (stone >= 50)
+                if (stone >= 50.00)
                 {
-                    stone -= 50;
+                    stone -= 50.00;
                     wood_in_second += 10;
                     axs = axe[3];
 
@@ -428,22 +415,12 @@ int main()
                     pause();
                     goto start;
                 }
-                else
-                {
-                    clear();
-
-                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
-                    cout << endl;
-
-                    pause();
-                    goto start;
-                }
                 break;
             case 4:
-                if (stone >= 35 && iron >= 15)
+                if (stone >= 35.00 && iron >= 15.00)
                 {
-                    stone -= 35;
-                    iron -= 15;
+                    stone -= 35.00;
+                    iron -= 15.00;
                     wood_in_second += 18;
                     axs = axe[4];
 
@@ -452,22 +429,12 @@ int main()
                     pause();
                     goto start;
                 }
-                else
-                {
-                    clear();
-
-                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
-                    cout << endl;
-
-                    pause();
-                    goto start;
-                }
                 break;
             case 5:
-                if (iron >= 50)
+                if (iron >= 50.00)
                 {
-                    iron -= 50;
-                    wood_in_second += 30;
+                    iron -= 50.00;
+                    wood_in_second += 30.00;
                     axs = axe[5];
 
                     cout << "You have purchased an iron ax!" << endl;
@@ -475,28 +442,171 @@ int main()
                     pause();
                     goto start;
                 }
-                else
+                break;
+            default:
+				if (ax > 5 || ax < 0)
+				{
+					clear();
+
+					cout << "You entered the wrong option!" << endl << endl;
+					cout << endl;
+
+					pause();
+					goto start;
+					break;
+				}
+				clear();
+
+				cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+				cout << endl;
+
+				pause();
+				goto start;
+				break;
+            }
+        }
+     // PICKAXES
+		if (section == 2)
+		{
+			clear();
+			int pickax;
+
+			cout << "Select an ax to purchase:" << endl << endl
+				<< "1 = Old wooden pickax:" << endl
+				<< "Price: 50.00 firewood." << endl
+				<< "Gives +0.10 stone per second." << endl << endl
+
+				<< "2 = Wooden pickax:" << endl
+				<< "Price: 150 firewood." << endl
+				<< "Gives +0.50 stone per second." << endl << endl
+
+				<< "3 = Wood-stone pickax:" << endl
+				<< "Price: 125.00 firewood and 25.00 stones." << endl
+				<< "Gives +1.00 stone and +0.10 iron per second." << endl << endl
+
+				<< "4 = Stone pickax:" << endl
+				<< "Price: 150 stone." << endl
+				<< "Gives +3.00 stone and +0.70 iron per second." << endl << endl
+
+				<< "5 = Stone-iron pickax:" << endl
+				<< "Price: 100.00 stone and 50.00 iron." << endl
+				<< "Gives +5.00 stone and +1.25 iron per second." << endl << endl
+
+				<< "6 = Iron pickax:" << endl
+				<< "Price: 150.00 iron." << endl
+				<< "Gives +10.00 stone and +3.00 iron per second." << endl
+				<< endl;
+			cout << endl;
+			cin >> pickax;
+
+			switch (pickax)
+			{
+			case 1:
+				if (wood >= 50.00)
+				{
+					wood -= 50.00;
+                    stone_in_second = 0.10;
+                    pickaxs = pickaxe[1];
+
+					cout << "You have purchased a old wooden pickax!" << endl;
+
+					pause();
+					goto start;
+				}
+				break;
+			case 2:
+				if (wood >= 150)
+				{
+					wood -= 150;
+                    stone_in_second = 0.50;
+                    pickaxs = pickaxe[2];
+
+					cout << "You have purchased a wooden pickax!" << endl;
+
+					pause();
+					goto start;
+				}
+				break;
+			case 3:
+				if (wood >= 125.00 && stone >= 25.00)
+				{
+					wood -= 125.00;
+                    stone -= 25.00;
+					stone_in_second = 1.00;
+					iron_in_second = 0.10;
+					pickaxs = pickaxe[3];
+
+					cout << "You have purchased a wood-stone pickax!" << endl;
+
+					pause();
+					goto start;
+				}
+				break;
+			case 4:
+				if (stone >= 150.00)
+				{
+					stone -= 150.00;
+					stone_in_second = 3.00;
+					iron_in_second = 0.70;
+					pickaxs = pickaxe[4];
+
+					cout << "You have purchased a stone pickax!" << endl;
+
+					pause();
+					goto start;
+				}
+				break;
+			case 5:
+				if (stone >= 100.00 && iron > 50.00)
+				{
+                    stone -= 100.00;
+                    iron -= 50.00;
+					stone_in_second = 5.00;
+					iron_in_second = 1.25;
+					pickaxs = pickaxe[5];
+
+					cout << "You have purchased an stone-iron pickax!" << endl;
+
+					pause();
+					goto start;
+				}
+				break;
+			case 6:
+				if (iron >= 150.00)
+				{
+					iron -= 150.00;
+                    stone_in_second = 10.00;
+                    iron_in_second = 3.00;
+					pickaxs = pickaxe[6];
+
+					cout << "You have purchased an iron pickax!" << endl;
+
+					pause();
+					goto start;
+				}
+				break;
+			default:
+                if (pickax > 6 || pickax < 0)
                 {
                     clear();
 
-                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                    cout << "You entered the wrong option!" << endl << endl;
                     cout << endl;
 
                     pause();
                     goto start;
+                    break;
                 }
-                break;
-            default:
-                clear();
+				clear();
 
-                cout << "You entered the wrong option!" << endl << endl;
-                cout << endl;
+				cout << "Unfortunately, you do not have enough resources for this pickax!" << endl << endl;
+				cout << endl;
 
-                pause();
-                goto start;
-                break;
-            }
-        }
+				pause();
+				goto start;
+				break;
+			}
+		}
         else
         {
             clear();
@@ -511,11 +621,12 @@ int main()
     else if (variant == 0)
     {
         clear();
-        cout << "Woods: " << wood << endl;
-        cout << "Stones: " << stone << endl;
-        cout << "Irons: " << iron << endl;
-        cout << endl;
-        cout << "Ax: " << axs << endl;
+        cout << "Woods: " << wood << endl
+             << "Stones: " << stone << endl
+             << "Irons: " << iron << endl
+             << endl
+             << "Ax: " << axs << endl
+             << "Pickax: " << pickaxs << endl;
         cout << endl;
         pause();
         goto start;
