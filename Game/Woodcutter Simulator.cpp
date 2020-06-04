@@ -32,7 +32,6 @@ void pause()
 
 int main()
 {
-//    setlocale(LC_ALL, "RU");
     srand(time(NULL));
     cout << fixed << setprecision(2);
 
@@ -339,12 +338,27 @@ int main()
             clear();
             int axe;
 
-            cout << "Select an ax to purchase:" << endl
-                 << "1 = Wooden ax | Costs 50.00 firewood." << endl
-                 << "2 = Wood-stone ax | Costs 35.00 firewood and 15.00 stones." << endl
-                 << "3 = Stone ax | Costs 50.00 stone." << endl
-                 << "4 = Stone-iron ax | Costs 35.00 stone and 15.00 iron." << endl
-                 << "5 = Iron ax | Costs 50.00 iron" << endl;
+            cout << "Select an ax to purchase:" << endl << endl
+                 << "1 = Wooden ax:" << endl
+                 << "Price: 50.00 firewood." << endl
+                 << "Gives +2 wood per second." << endl << endl
+
+                 << "2 = Wood-stone ax:" << endl
+                 << "Price: 35.00 firewood and 15.00 stones." << endl
+                 << "Gives +5 wood per second." << endl << endl
+
+                 << "3 = Stone ax:" << endl
+                 << "Price: 50.00 stone." << endl
+                 << "Gives +10 wood per second." << endl << endl
+
+                 << "4 = Stone-iron ax:" << endl
+                 << "Price: 35.00 stone and 15.00 iron." << endl
+                 << "Gives +18 wood per second." << endl << endl
+
+                 << "5 = Iron ax:" << endl
+                 << "Price: 50.00 iron." << endl
+                 << "Gives +30 wood per second." << endl
+                 << endl;
             cout << endl;
             cin >> axe;
 
@@ -355,8 +369,6 @@ int main()
                 {
                     wood -= 50;
                     wood_in_second += 2;
-                    stone_in_second += 0.3;
-                    iron_in_second += 0.05;
 
                     cout << "You have purchased a wooden ax!" << endl;
 
@@ -380,8 +392,6 @@ int main()
                     wood -= 35;
                     stone -= 15;
                     wood_in_second += 5;
-                    stone_in_second += 1;
-                    iron_in_second += 0.1;
 
                     cout << "You have purchased a wood-stone ax!" << endl;
 
@@ -404,8 +414,6 @@ int main()
                 {
                     stone -= 50;
                     wood_in_second += 10;
-                    stone_in_second += 2.5;
-                    iron_in_second += 0.4;
 
                     cout << "You have purchased a stone ax!" << endl;
 
@@ -429,8 +437,6 @@ int main()
                     stone -= 35;
                     iron -= 15;
                     wood_in_second += 18;
-                    stone_in_second += 5;
-                    iron_in_second += 1;
 
                     cout << "You have purchased a stone-iron ax!" << endl;
 
@@ -453,8 +459,6 @@ int main()
                 {
                     iron -= 50;
                     wood_in_second += 30;
-                    stone_in_second += 10;
-                    iron_in_second += 3;
 
                     cout << "You have purchased an iron ax!" << endl;
 
