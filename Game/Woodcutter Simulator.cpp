@@ -50,7 +50,7 @@ int main()
     double stone_in_second = 0.1;
     double iron_in_second = 0.01;
 
-    //profile variable
+    //profile variables
     //axes
     string axe[6]{ "Old wooden", "Wooden", "Wood-stone", "Stone", "Stone-iron", "Iron" };
     string axs = axe[0];
@@ -463,7 +463,6 @@ int main()
                 pause();
                 goto start;
                 break;
-
             }
         }
      // PICKAXES
