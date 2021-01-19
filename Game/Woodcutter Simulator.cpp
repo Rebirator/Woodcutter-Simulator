@@ -47,8 +47,8 @@ int main()
     double iron = 0;
 
     double wood_per_second = 1;
-    double stone_in_second = 0.1;
-    double iron_in_second = 0.01;
+    double stone_per_second = 0.1;
+    double iron_per_second = 0.01;
 
     //profile variables
     //axes
@@ -176,7 +176,7 @@ int main()
             int stone_variant;
 
             cout << "Choose a way to get stone" << endl
-                 << "1 = Chopping stone(" << stone_in_second << " per second)." << endl
+                 << "1 = Chopping stone(" << stone_per_second << " per second)." << endl
                  << "2 = Earn stone by solving tasks." << endl;
             cin >> stone_variant;
             cout << endl;
@@ -193,8 +193,8 @@ int main()
                 for (size_t i = 0; i < time; i++)
                 {
                     Sleep(ms);
-                    stone += stone_in_second;
-                    cout << "You cut down " << stone_in_second << " stone(s)." << endl;
+                    stone += stone_per_second;
+                    cout << "You cut down " << stone_per_second << " stone(s)." << endl;
                 }
                 cout << endl;
 
@@ -257,7 +257,7 @@ int main()
             int iron_variant;
 
             cout << "Choose a way to get iron" << endl
-                 << "1 = Chopping iron(" << iron_in_second << " per second)." << endl
+                 << "1 = Chopping iron(" << iron_per_second << " per second)." << endl
                  << "2 = Earn iron by solving tasks." << endl;
             cin >> iron_variant;
             cout << endl;
@@ -274,8 +274,8 @@ int main()
                 for (size_t i = 0; i < time; i++)
                 {
                     Sleep(ms);
-                    iron += iron_in_second;
-                    cout << "You cut down " << iron_in_second << " iron(s)." << endl;
+                    iron += iron_per_second;
+                    cout << "You cut down " << iron_per_second << " iron(s)." << endl;
                 }
                 cout << endl;
 
@@ -548,7 +548,7 @@ int main()
                 if (wood >= 50.00)
                 {
                     wood -= 50.00;
-                    stone_in_second = 0.10;
+                    stone_per_second = 0.10;
                     pickaxs = pickaxe[1];
 
                     cout << "You have purchased a old wooden pickax!" << endl;
@@ -572,7 +572,7 @@ int main()
                 if (wood >= 150)
                 {
                     wood -= 150;
-                    stone_in_second = 0.50;
+                    stone_per_second = 0.50;
                     pickaxs = pickaxe[2];
 
                     cout << "You have purchased a wooden pickax!" << endl;
@@ -597,8 +597,8 @@ int main()
                 {
                     wood -= 125.00;
                     stone -= 25.00;
-                    stone_in_second = 1.00;
-                    iron_in_second = 0.10;
+                    stone_per_second = 1.00;
+                    iron_per_second = 0.10;
                     pickaxs = pickaxe[3];
 
                     cout << "You have purchased a wood-stone pickax!" << endl;
@@ -622,8 +622,8 @@ int main()
                 if (stone >= 150.00)
                 {
                     stone -= 150.00;
-                    stone_in_second = 3.00;
-                    iron_in_second = 0.70;
+                    stone_per_second = 3.00;
+                    iron_per_second = 0.70;
                     pickaxs = pickaxe[4];
 
                     cout << "You have purchased a stone pickax!" << endl;
@@ -648,8 +648,8 @@ int main()
                 {
                     stone -= 100.00;
                     iron -= 50.00;
-                    stone_in_second = 5.00;
-                    iron_in_second = 1.25;
+                    stone_per_second = 5.00;
+                    iron_per_second = 1.25;
                     pickaxs = pickaxe[5];
 
                     cout << "You have purchased an stone-iron pickax!" << endl;
@@ -673,8 +673,8 @@ int main()
                 if (iron >= 150.00)
                 {
                     iron -= 150.00;
-                    stone_in_second = 10.00;
-                    iron_in_second = 3.00;
+                    stone_per_second = 10.00;
+                    iron_per_second = 3.00;
                     pickaxs = pickaxe[6];
 
                     cout << "You have purchased an iron pickax!" << endl;
@@ -725,8 +725,8 @@ int main()
              << "Irons: " << iron << endl
              << endl
              << "Wood production per second: " << wood_per_second << endl
-             << "Stone production per second: " << stone_in_second << endl
-             << "Iron production per second: " << iron_in_second << endl
+             << "Stone production per second: " << stone_per_second << endl
+             << "Iron production per second: " << iron_per_second << endl
              << endl
              << "Ax: " << axs << endl
              << "Pickax: " << pickaxs << endl;
