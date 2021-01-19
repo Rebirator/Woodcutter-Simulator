@@ -46,7 +46,7 @@ int main()
     double stone = 0;
     double iron = 0;
 
-    double wood_in_second = 1;
+    double wood_per_second = 1;
     double stone_in_second = 0.1;
     double iron_in_second = 0.01;
 
@@ -94,7 +94,7 @@ int main()
             int firewood_variant;
 
             cout << "Choose a way to get firewood" << endl
-                 << "1 = Chopping wood(" << wood_in_second << " per second)." << endl
+                 << "1 = Chopping wood(" << wood_per_second << " per second)." << endl
                  << "2 = Earn firewood by solving tasks." << endl;
             cin >> firewood_variant;
             cout << endl;
@@ -112,8 +112,8 @@ int main()
                 for (size_t i = 0; i < time; i++)
                 {
                     Sleep(ms);
-                    wood += wood_in_second;
-                    cout << "You cut down " << wood_in_second << " wood(s)." << endl;
+                    wood += wood_per_second;
+                    cout << "You cut down " << wood_per_second << " wood(s)." << endl;
                 }
                 cout << endl;
 
@@ -380,7 +380,7 @@ int main()
                 if (wood >= 50.00)
                 {
                     wood -= 50.00;
-                    wood_in_second += 2;
+                    wood_per_second += 2;
                     axs = axe[1];
 
                     cout << "You have purchased a wooden ax!" << endl;
@@ -405,7 +405,7 @@ int main()
                 {
                     wood -= 35.00;
                     stone -= 15.00;
-                    wood_in_second += 5;
+                    wood_per_second += 5;
                     axs = axe[2];
 
                     cout << "You have purchased a wood-stone ax!" << endl;
@@ -429,7 +429,7 @@ int main()
                 if (stone >= 50.00)
                 {
                     stone -= 50.00;
-                    wood_in_second += 10;
+                    wood_per_second += 10;
                     axs = axe[3];
 
                     cout << "You have purchased a stone ax!" << endl;
@@ -454,7 +454,7 @@ int main()
                 {
                     stone -= 35.00;
                     iron -= 15.00;
-                    wood_in_second += 18;
+                    wood_per_second += 18;
                     axs = axe[4];
 
                     cout << "You have purchased a stone-iron ax!" << endl;
@@ -478,7 +478,7 @@ int main()
                 if (iron >= 50.00)
                 {
                     iron -= 50.00;
-                    wood_in_second += 30.00;
+                    wood_per_second += 30.00;
                     axs = axe[5];
 
                     cout << "You have purchased an iron ax!" << endl;
@@ -719,6 +719,20 @@ int main()
     else if (variant == 0)
     {
         clear();
+
+        cout << "Woods: " << wood << endl
+             << "Stones: " << stone << endl
+             << "Irons: " << iron << endl
+             << endl
+             << "Wood production per second: " << wood_per_second << endl
+             << "Stone production per second: " << stone_in_second << endl
+             << "Iron production per second: " << iron_in_second << endl
+             << endl
+             << "Ax: " << axs << endl
+             << "Pickax: " << pickaxs << endl;
+        cout << endl;       
+        pause();
+
         goto start;
     }
     else
