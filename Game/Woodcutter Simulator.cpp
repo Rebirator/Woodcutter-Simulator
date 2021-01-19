@@ -340,7 +340,7 @@ int main()
 
         cout << "Select a store section:" << endl
              << "1 = Axes." << endl
-             << "2 = Pickaxes" << endl;
+             << "2 = Pickaxes." << endl;
         cin >> section;
         cout << endl;
 
@@ -388,6 +388,17 @@ int main()
                     pause();
                     goto start;
                 }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                    cout << endl;
+
+                    pause();
+                    goto start;
+                    break;
+                }
                 break;
             case 2:
                 if (wood >= 35.00 && stone >= 15.00)
@@ -402,6 +413,17 @@ int main()
                     pause();
                     goto start;
                 }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                    cout << endl;
+
+                    pause();
+                    goto start;
+                    break;
+                }
                 break;
             case 3:
                 if (stone >= 50.00)
@@ -414,6 +436,17 @@ int main()
 
                     pause();
                     goto start;
+                }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                    cout << endl;
+
+                    pause();
+                    goto start;
+                    break;
                 }
                 break;
             case 4:
@@ -429,6 +462,17 @@ int main()
                     pause();
                     goto start;
                 }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                    cout << endl;
+
+                    pause();
+                    goto start;
+                    break;
+                }
                 break;
             case 5:
                 if (iron >= 50.00)
@@ -442,22 +486,21 @@ int main()
                     pause();
                     goto start;
                 }
-                break;
-            default:
-                if (ax > 5 || ax < 0)
+                else
                 {
                     clear();
 
-                    cout << "You entered the wrong option!" << endl << endl;
+                    cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
                     cout << endl;
 
                     pause();
                     goto start;
                     break;
                 }
+            default:
                 clear();
 
-                cout << "Unfortunately, you do not have enough resources for this ax!" << endl << endl;
+                cout << "You entered the wrong option!" << endl << endl;
                 cout << endl;
 
                 pause();
@@ -513,6 +556,17 @@ int main()
                     pause();
                     goto start;
                 }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this pickax!" << endl << endl;
+                    cout << endl;
+
+                    pause();
+                    goto start;
+                    break;
+                }
                 break;
             case 2:
                 if (wood >= 150)
@@ -525,6 +579,17 @@ int main()
 
                     pause();
                     goto start;
+                }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this pickax!" << endl << endl;
+                    cout << endl;
+
+                    pause();
+                    goto start;
+                    break;
                 }
                 break;
             case 3:
@@ -541,6 +606,17 @@ int main()
                     pause();
                     goto start;
                 }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this pickax!" << endl << endl;
+                    cout << endl;
+
+                    pause();
+                    goto start;
+                    break;
+                }
                 break;
             case 4:
                 if (stone >= 150.00)
@@ -554,6 +630,17 @@ int main()
 
                     pause();
                     goto start;
+                }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this pickax!" << endl << endl;
+                    cout << endl;
+
+                    pause();
+                    goto start;
+                    break;
                 }
                 break;
             case 5:
@@ -570,6 +657,17 @@ int main()
                     pause();
                     goto start;
                 }
+                else
+                {
+                    clear();
+
+                    cout << "Unfortunately, you do not have enough resources for this pickax!" << endl << endl;
+                    cout << endl;
+
+                    pause();
+                    goto start;
+                    break;
+                }
                 break;
             case 6:
                 if (iron >= 150.00)
@@ -584,22 +682,22 @@ int main()
                     pause();
                     goto start;
                 }
-                break;
-            default:
-                if (pickax > 6 || pickax < 0)
+                else
                 {
                     clear();
 
-                    cout << "You entered the wrong option!" << endl << endl;
+                    cout << "Unfortunately, you do not have enough resources for this pickax!" << endl << endl;
                     cout << endl;
 
                     pause();
                     goto start;
                     break;
                 }
+                break;
+            default:
                 clear();
 
-                cout << "Unfortunately, you do not have enough resources for this pickax!" << endl << endl;
+                cout << "You entered the wrong option!" << endl << endl;
                 cout << endl;
 
                 pause();
@@ -621,14 +719,6 @@ int main()
     else if (variant == 0)
     {
         clear();
-        cout << "Woods: " << wood << endl
-             << "Stones: " << stone << endl
-             << "Irons: " << iron << endl
-             << endl
-             << "Ax: " << axs << endl
-             << "Pickax: " << pickaxs << endl;
-        cout << endl;
-        pause();
         goto start;
     }
     else
